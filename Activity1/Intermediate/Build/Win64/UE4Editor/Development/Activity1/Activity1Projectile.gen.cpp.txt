@@ -1,0 +1,5 @@
+C:\Users\camer\Documents\Github\GameProjects\Activity1\Intermediate\Build\Win64\UE4Editor\Development\Activity1\Definitions.Activity1.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\camer\Documents\Github\GameProjects\Activity1\Source\Activity1/Activity1Projectile.h
+C:\Users\camer\Documents\Github\GameProjects\Activity1\Intermediate\Build\Win64\UE4Editor\Inc\Activity1\Activity1Projectile.generated.h

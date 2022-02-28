@@ -1,0 +1,2 @@
+C:\Users\camer\Documents\Github\GameProjects\Activity1\Intermediate\Build\Win64\UE4Editor\Development\Activity1\Definitions.Activity1.h
+C:\Users\camer\Documents\Github\GameProjects\Activity1\Source\Activity1\Activity1.h
