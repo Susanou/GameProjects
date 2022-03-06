@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Activity1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2C37EB85-B5C8-414F-B2C0-88822F89B37A}</UniqueIdentifier>
+      <UniqueIdentifier>{CBBC92EB-D8CF-471C-91C9-D28147205AB2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Activity1.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,9 @@
     <None Include="..\..\Source\Activity1Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{6C6806DA-14B3-4D28-A420-DFEBF2D211E5}</UniqueIdentifier>
+      <UniqueIdentifier>{91226DCF-25FA-41F5-BFA6-A5072F70BA9B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Activity1">
-      <UniqueIdentifier>{4ABD2103-FA97-4694-A5C0-7557B4256247}</UniqueIdentifier>
+      <UniqueIdentifier>{D8680BC3-A09F-4841-ACBD-E9263788A335}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Activity1\Activity1.Build.cs">
       <Filter>Source\Activity1</Filter>
@@ -64,6 +65,18 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Activity1\Activity1Projectile.h">
       <Filter>Source\Activity1</Filter>
+    </ClInclude>
+    <Filter Include="Source\Activity1\Private">
+      <UniqueIdentifier>{611399FC-46FA-4E3E-9EF2-4B23FD032BD8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Activity1\Private\BlackHole.cpp">
+      <Filter>Source\Activity1\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Activity1\Public">
+      <UniqueIdentifier>{92543855-B96E-43FB-90DB-F94E90EAE8C1}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Activity1\Public\BlackHole.h">
+      <Filter>Source\Activity1\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
