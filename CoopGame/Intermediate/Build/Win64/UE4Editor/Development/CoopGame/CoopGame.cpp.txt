@@ -1,0 +1,2 @@
+C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\Definitions.CoopGame.h
+C:\Users\camer\Documents\Github\GameProjects\CoopGame\Source\CoopGame\CoopGame.h

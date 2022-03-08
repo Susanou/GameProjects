@@ -73,10 +73,16 @@ protected:
 	UPROPERTY(EditInstanceOnly, Category = "AI")
 	bool bPatrol;
 
-	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
-		TArray<AActor*> PatrolPoints;
+	/* First of two patrol points to patrol between */
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition="bPatrol"))
+	AActor* FirstPatrolPoint;
 
-	int CurrentPoint = 0;
+	/* Second of two patrol points to patrol between */
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+	AActor* SecondPatrolPoint;
+	
+	// The current point the actor is either moving to or standing at
+	AActor* CurrentPatrolPoint;
 
 	void MoveToNextPatrolPoint();
 

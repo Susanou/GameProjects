@@ -67,7 +67,7 @@ void AFPSAIGuard::OnNoiseHeard(APawn* NoiseInstigator, const FVector& Location, 
 		return;
 	}
 
-	DrawDebugSphere(GetWorld(), Location, 32.0f, 12, FColor::Blue, false, 10.0f);
+	DrawDebugSphere(GetWorld(), Location, 32.0f, 12, FColor::Green, false, 10.0f);
 
 	FVector Direction = Location - GetActorLocation();
 	Direction.Normalize();
@@ -134,10 +134,15 @@ void AFPSAIGuard::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	// Patrol Goal Checks
-	if (PatrolPoints.Num() > 0)
+	if (CurrentPatrolPoint)
 	{
-		FVector Delta = GetActorLocation() - PatrolPoints[CurrentPoint]->GetActorLocation();
+		FVector Delta = GetActorLocation() - CurrentPatrolPoint->GetActorLocation();
 		float DistanceToGoal = Delta.Size();
+
+		// Check if we are within 75 units of our goal, if so - pick a new patrol point
+		// Keep in mind this includes vertical height difference! If your patrol point is in the floor, the distance to the pivot of guard is higher
+		// In that case you may need to increase this value in your project or better align control points (ideally you remove Z axis all together by using
+		// Alternative: float DistanceToGoal = FMath::Distance2D(GetActorLocation(), CurrentPatrolPoint->GetActorLocation());
 
 		if (DistanceToGoal < 75)
 		{
@@ -148,11 +153,17 @@ void AFPSAIGuard::Tick(float DeltaTime)
 
 void AFPSAIGuard::MoveToNextPatrolPoint()
 {
-	
-	CurrentPoint += 1;
-	CurrentPoint %= PatrolPoints.Num();
+	// Assign next patrol point.
+	if (CurrentPatrolPoint == nullptr || CurrentPatrolPoint == SecondPatrolPoint)
+	{
+		CurrentPatrolPoint = FirstPatrolPoint;
+	}
+	else
+	{
+		CurrentPatrolPoint = SecondPatrolPoint;
+	}
 
-	UAIBlueprintHelperLibrary::SimpleMoveToActor(GetController(), PatrolPoints[CurrentPoint]);
+	UAIBlueprintHelperLibrary::SimpleMoveToActor(GetController(), CurrentPatrolPoint);
 }
 
 
