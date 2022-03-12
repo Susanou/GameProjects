@@ -73,6 +73,9 @@ protected:
 	UPROPERTY(EditInstanceOnly, Category = "AI")
 	bool bPatrol;
 
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+	TArray<AActor*> PatrolPoints;
+	
 	/* First of two patrol points to patrol between */
 	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition="bPatrol"))
 	AActor* FirstPatrolPoint;

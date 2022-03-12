@@ -34,6 +34,17 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
 
+	void BeginZoom();
+	void EndZoom();
+
+	bool bWantsToZoom;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+	float ZoomedFOV;
+	float DefaultFOV;
+	UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1, ClampMax = 100))
+	float ZoomInterpSpeed;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -41,8 +52,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-//challenge code
-protected:
-	
-	void OnJump();
+	virtual FVector GetPawnViewLocation() const override;
+
 };
