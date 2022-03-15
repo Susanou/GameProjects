@@ -20,14 +20,13 @@ public:
 	ASWeapon();
 
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USkeletalMeshComponent* MeshComp;
 
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-	virtual void Fire();
+	void PlayFireEffects(FVector TraceEnd);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	TSubclassOf<UDamageType> DamageType;
@@ -38,7 +37,19 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 		UParticleSystem* TracerEffect;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-		UParticleSystem* ImpactEffect;
+		UParticleSystem* DefaultImpactEffect;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+		UParticleSystem* FleshImpactEffect;
+
+	virtual void Fire();
+
+	FTimerHandle TimerHandle_TimeBetweenShots;
+
+	float LastFireTime;
+	/* RPM - Bullets per minute fired by weapon */
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+		float RateOfFire;
+	float TimeBetweenShots;
 
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
@@ -47,9 +58,19 @@ protected:
 		FName TracerTargetName;
 
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+		TSubclassOf<UCameraShakeBase> FireCamShake;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+		float BaseDamage;
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+		float HeadShotMultiplier;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+
+
+	void StartFire();
+
+	void StopFire();
 
 };
