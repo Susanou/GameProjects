@@ -66,11 +66,35 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 		float HeadShotMultiplier;
 
+	//challenge code
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+		int NumberOfBullets;
+	int CurrentBullets;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+		float ReloadTime;
+
+	FTimerHandle TimerHandle_ReloadTimer;
+
+	//challenge code
+	void Reload();
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	bool bChallengeOn;
+
+	
+
 public:	
 
 
 	void StartFire();
 
 	void StopFire();
+
+
+	void OnReload();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Weapon")
+		void OnFire(int CurrentNumberBullets);
 
 };

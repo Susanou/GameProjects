@@ -16,6 +16,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_SPARSE_DATA
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_EVENT_PARMS \
+	struct SWeapon_eventOnFire_Parms \
+	{ \
+		int32 CurrentNumberBullets; \
+	};
+
+
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASWeapon(); \
@@ -70,16 +78,23 @@ public: \
 	FORCEINLINE static uint32 __PPO__TracerTargetName() { return STRUCT_OFFSET(ASWeapon, TracerTargetName); } \
 	FORCEINLINE static uint32 __PPO__FireCamShake() { return STRUCT_OFFSET(ASWeapon, FireCamShake); } \
 	FORCEINLINE static uint32 __PPO__BaseDamage() { return STRUCT_OFFSET(ASWeapon, BaseDamage); } \
-	FORCEINLINE static uint32 __PPO__HeadShotMultiplier() { return STRUCT_OFFSET(ASWeapon, HeadShotMultiplier); }
+	FORCEINLINE static uint32 __PPO__HeadShotMultiplier() { return STRUCT_OFFSET(ASWeapon, HeadShotMultiplier); } \
+	FORCEINLINE static uint32 __PPO__NumberOfBullets() { return STRUCT_OFFSET(ASWeapon, NumberOfBullets); } \
+	FORCEINLINE static uint32 __PPO__ReloadTime() { return STRUCT_OFFSET(ASWeapon, ReloadTime); } \
+	FORCEINLINE static uint32 __PPO__bChallengeOn() { return STRUCT_OFFSET(ASWeapon, bChallengeOn); }
 
 
-#define CoopGame_Source_CoopGame_Public_SWeapon_h_13_PROLOG
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_13_PROLOG \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_EVENT_PARMS
+
+
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_PRIVATE_PROPERTY_OFFSET \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_SPARSE_DATA \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_STANDARD_CONSTRUCTORS \
 public: \
@@ -92,6 +107,7 @@ public: \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_PRIVATE_PROPERTY_OFFSET \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_SPARSE_DATA \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS_NO_PURE_DECLS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_ENHANCED_CONSTRUCTORS \
 private: \

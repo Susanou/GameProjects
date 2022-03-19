@@ -6,7 +6,9 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/PawnMovementComponent.h"
 #include "SWeapon.h"
-
+#include "Components/CapsuleComponent.h"
+#include "CoopGame/CoopGame.h"
+#include "Components/SHealthComponent.h"
 
 
 // Sets default values
@@ -21,6 +23,10 @@ ASCharacter::ASCharacter()
 
 	GetMovementComponent()->GetNavAgentPropertiesRef().bCanCrouch = true;
 
+	GetCapsuleComponent()->SetCollisionResponseToChannel(COLLISION_WEAPON, ECR_Ignore);
+
+	HealthComp = CreateDefaultSubobject<USHealthComponent>(TEXT("HealthComp"));
+
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	CameraComp->SetupAttachment(SpringArmComp);
 
@@ -28,6 +34,8 @@ ASCharacter::ASCharacter()
 	ZoomInterpSpeed = 20;
 
 	WeaponAttachSocketName = "WeaponSocket";
+
+
 }
 
 // Called when the game starts or when spawned
@@ -49,6 +57,8 @@ void ASCharacter::BeginPlay()
 		CurrentWeapon->SetOwner(this);
 		CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponAttachSocketName);
 	}
+
+	HealthComp->OnHealthChanged.AddDynamic(this, &ASCharacter::OnHealthChanged);
 	
 }
 
@@ -87,6 +97,7 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	//Challenge code snipet
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASCharacter::Jump);
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &ASCharacter::Reload);
 }
 
 FVector ASCharacter::GetPawnViewLocation() const
@@ -142,5 +153,29 @@ void ASCharacter::StopFire()
 	if (CurrentWeapon)
 	{
 		CurrentWeapon->StopFire();
+	}
+}
+
+void ASCharacter::Reload()
+{
+	if (CurrentWeapon)
+	{
+		CurrentWeapon->OnReload();
+	}
+}
+
+void ASCharacter::OnHealthChanged(USHealthComponent* OwningHealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
+{
+	if (Health <= 0.0f && !bDied)
+	{
+		// Death
+		bDied = true;
+
+		GetMovementComponent()->StopMovementImmediately();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+		DetachFromControllerPendingDestroy();
+
+		SetLifeSpan(10.0f);
 	}
 }
