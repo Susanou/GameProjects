@@ -14,7 +14,6 @@ public class King : Piece
             Vector2Int nextGridPoint = new Vector2Int(gridPoint.x + dir.x, gridPoint.y + dir.y);
             locations.Add(nextGridPoint);
         }
-
         return locations;
     }
 }

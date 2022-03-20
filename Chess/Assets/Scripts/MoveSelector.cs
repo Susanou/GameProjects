@@ -13,15 +13,16 @@ public class MoveSelector : MonoBehaviour
     private List<Vector2Int> moveLocations;
     private List<GameObject> locationHighlights;
 
-    void Start ()
+    // Start is called before the first frame update
+    void Start()
     {
         this.enabled = false;
-        tileHighlight = Instantiate(tileHighlightPrefab, Geometry.PointFromGrid(new Vector2Int(0, 0)),
-            Quaternion.identity, gameObject.transform);
+        tileHighlight = Instantiate(tileHighlightPrefab, Geometry.PointFromGrid(new Vector2Int(0, 0)), Quaternion.identity, gameObject.transform);
         tileHighlight.SetActive(false);
     }
 
-    void Update ()
+    // Update is called once per frame
+    void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -33,15 +34,16 @@ public class MoveSelector : MonoBehaviour
 
             tileHighlight.SetActive(true);
             tileHighlight.transform.position = Geometry.PointFromGrid(gridPoint);
-            if (Input.GetMouseButtonDown(0))
+
+            if(Input.GetMouseButtonDown(0))
             {
-                // check for valid move location
+                //Check if you want to move to a valid position
                 if (!moveLocations.Contains(gridPoint))
                 {
                     return;
                 }
 
-                if (GameManager.instance.PieceAtGrid(gridPoint) == null)
+                if(GameManager.instance.PieceAtGrid(gridPoint) == null)
                 {
                     GameManager.instance.Move(movingPiece, gridPoint);
                 }
@@ -51,12 +53,13 @@ public class MoveSelector : MonoBehaviour
                     GameManager.instance.Move(movingPiece, gridPoint);
                 }
 
+                //Capture an enemy piece
                 ExitState();
             }
-        }
-        else
-        {
-            tileHighlight.SetActive(false);
+            else
+            {
+                tileHighlight.SetActive(false);
+            }
         }
     }
 
@@ -87,10 +90,10 @@ public class MoveSelector : MonoBehaviour
             CancelMove();
         }
 
-        foreach (Vector2Int loc in moveLocations)
+        foreach(Vector2Int loc in moveLocations)
         {
             GameObject highlight;
-            if (GameManager.instance.PieceAtGrid(loc))
+            if(GameManager.instance.PieceAtGrid(loc))
             {
                 highlight = Instantiate(attackLocationPrefab, Geometry.PointFromGrid(loc), Quaternion.identity, gameObject.transform);
             }
@@ -105,15 +108,16 @@ public class MoveSelector : MonoBehaviour
     private void ExitState()
     {
         this.enabled = false;
-        TileSelector selector = GetComponent<TileSelector>();
         tileHighlight.SetActive(false);
         GameManager.instance.DeselectPiece(movingPiece);
         movingPiece = null;
-        GameManager.instance.NextPlayer();
+        TileSelector selector = GetComponent<TileSelector>();
         selector.EnterState();
-        foreach (GameObject highlight in locationHighlights)
+
+        foreach(GameObject highlight in locationHighlights)
         {
             Destroy(highlight);
         }
+        GameManager.instance.NextPlayer();
     }
 }

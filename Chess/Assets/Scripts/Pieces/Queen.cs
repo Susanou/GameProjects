@@ -13,9 +13,9 @@ public class Queen : Piece
         {
             for (int i = 1; i < 8; i++)
             {
-                Vector2Int nextGridPoint = new Vector2Int(gridPoint.x + i * dir.x, gridPoint.y + i * dir.y);
+                Vector2Int nextGridPoint = new Vector2Int(gridPoint.x + i*dir.x, gridPoint.y + i*dir.y);
                 locations.Add(nextGridPoint);
-                if (GameManager.instance.PieceAtGrid(nextGridPoint))
+                if(GameManager.instance.PieceAtGrid(nextGridPoint))
                 {
                     break;
                 }
