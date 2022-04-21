@@ -79,7 +79,6 @@ public: \
 	FORCEINLINE static uint32 __PPO__FireCamShake() { return STRUCT_OFFSET(ASWeapon, FireCamShake); } \
 	FORCEINLINE static uint32 __PPO__BaseDamage() { return STRUCT_OFFSET(ASWeapon, BaseDamage); } \
 	FORCEINLINE static uint32 __PPO__HeadShotMultiplier() { return STRUCT_OFFSET(ASWeapon, HeadShotMultiplier); } \
-	FORCEINLINE static uint32 __PPO__NumberOfBullets() { return STRUCT_OFFSET(ASWeapon, NumberOfBullets); } \
 	FORCEINLINE static uint32 __PPO__ReloadTime() { return STRUCT_OFFSET(ASWeapon, ReloadTime); } \
 	FORCEINLINE static uint32 __PPO__bChallengeOn() { return STRUCT_OFFSET(ASWeapon, bChallengeOn); }
 

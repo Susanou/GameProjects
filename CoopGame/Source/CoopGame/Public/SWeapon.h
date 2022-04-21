@@ -66,11 +66,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 		float HeadShotMultiplier;
 
-	//challenge code
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
-		int NumberOfBullets;
-	int CurrentBullets;
-
 	UPROPERTY(EditDefaultsOnly, Category = "Player")
 		float ReloadTime;
 
@@ -85,6 +80,11 @@ protected:
 	
 
 public:	
+
+	//challenge code
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+		int NumberOfBullets;
+	int CurrentBullets;
 
 
 	void StartFire();

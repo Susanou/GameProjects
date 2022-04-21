@@ -122,10 +122,6 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HeadShotMultiplier;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NumberOfBullets_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_NumberOfBullets;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReloadTime_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReloadTime;
@@ -134,6 +130,10 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 #endif
 		static void NewProp_bChallengeOn_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bChallengeOn;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NumberOfBullets_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_NumberOfBullets;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -239,15 +239,6 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASWeapon_Statics::NewProp_HeadShotMultiplier = { "HeadShotMultiplier", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASWeapon, HeadShotMultiplier), METADATA_PARAMS(Z_Construct_UClass_ASWeapon_Statics::NewProp_HeadShotMultiplier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASWeapon_Statics::NewProp_HeadShotMultiplier_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData[] = {
-		{ "Category", "Player" },
-		{ "Comment", "//challenge code\n" },
-		{ "ModuleRelativePath", "Public/SWeapon.h" },
-		{ "ToolTip", "challenge code" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets = { "NumberOfBullets", nullptr, (EPropertyFlags)0x0020080000010015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASWeapon, NumberOfBullets), METADATA_PARAMS(Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASWeapon_Statics::NewProp_ReloadTime_MetaData[] = {
 		{ "Category", "Player" },
 		{ "ModuleRelativePath", "Public/SWeapon.h" },
@@ -265,6 +256,15 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 		((ASWeapon*)Obj)->bChallengeOn = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASWeapon_Statics::NewProp_bChallengeOn = { "bChallengeOn", nullptr, (EPropertyFlags)0x0020080000010015, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ASWeapon), &Z_Construct_UClass_ASWeapon_Statics::NewProp_bChallengeOn_SetBit, METADATA_PARAMS(Z_Construct_UClass_ASWeapon_Statics::NewProp_bChallengeOn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASWeapon_Statics::NewProp_bChallengeOn_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData[] = {
+		{ "Category", "Player" },
+		{ "Comment", "//challenge code\n" },
+		{ "ModuleRelativePath", "Public/SWeapon.h" },
+		{ "ToolTip", "challenge code" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets = { "NumberOfBullets", nullptr, (EPropertyFlags)0x0010000000010015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASWeapon, NumberOfBullets), METADATA_PARAMS(Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASWeapon_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_MeshComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_DamageType,
@@ -278,9 +278,9 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_FireCamShake,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_BaseDamage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_HeadShotMultiplier,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_ReloadTime,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_bChallengeOn,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASWeapon_Statics::NewProp_NumberOfBullets,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASWeapon>::IsAbstract,
@@ -309,7 +309,7 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASWeapon, 3322219789);
+	IMPLEMENT_CLASS(ASWeapon, 2469187030);
 	template<> COOPGAME_API UClass* StaticClass<ASWeapon>()
 	{
 		return ASWeapon::StaticClass();
