@@ -38,7 +38,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "FX")
 		UMaterialInterface* ExplodedMaterial;
 
+	UPROPERTY(ReplicatedUsing = OnRep_Explosion)
 	bool bExploded;
+
+	UFUNCTION()
+		void OnRep_Explosion();
 
 
 
@@ -46,7 +50,5 @@ protected:
 	void OnHealthChanged(USHealthComponent* OwningHealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 };
