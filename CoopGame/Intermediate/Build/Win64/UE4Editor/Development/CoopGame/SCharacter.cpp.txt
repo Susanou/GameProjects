@@ -28,3 +28,4 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Users\camer\Documents\Github\GameProjects\CoopGame\Source\CoopGame/CoopGame.h
 C:\Users\camer\Documents\Github\GameProjects\CoopGame\Source\CoopGame\Public\Components/SHealthComponent.h
 C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Inc\CoopGame\SHealthComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\Net/UnrealNetwork.h

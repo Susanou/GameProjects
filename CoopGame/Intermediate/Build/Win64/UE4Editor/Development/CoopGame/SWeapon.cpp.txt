@@ -23,3 +23,4 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\PhysicsCore\Public\Phy
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore\PhysicsSettingsEnums.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore\PhysicalMaterial.generated.h
 C:\Users\camer\Documents\Github\GameProjects\CoopGame\Source\CoopGame/CoopGame.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\Net/UnrealNetwork.h

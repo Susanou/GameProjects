@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\CoopGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SExplosiveBarrel.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SGrenadeLauncher.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SProjectile.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SHealthComponent.cpp.obj"
@@ -44,6 +45,7 @@
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGame.init.gen.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGameGameModeBase.gen.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SCharacter.gen.cpp.obj"
+"C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SExplosiveBarrel.gen.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SGrenadeLauncher.gen.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SHealthComponent.gen.cpp.obj"
 "C:\Users\camer\Documents\Github\GameProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SProjectile.gen.cpp.obj"

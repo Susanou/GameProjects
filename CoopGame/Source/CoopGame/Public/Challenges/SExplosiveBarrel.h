@@ -7,6 +7,9 @@
 #include "SExplosiveBarrel.generated.h"
 
 class USHealthComponent;
+class UStaticMeshComponent;
+class URadialForceComponent;
+class UParticleSystem;
 
 UCLASS()
 class COOPGAME_API ASExplosiveBarrel : public AActor
@@ -21,9 +24,21 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UPROPERTY(VisibleAnywhere, Category = "Components")
 		USHealthComponent* HealthComp;
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+		UStaticMeshComponent* MeshComp;
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+		URadialForceComponent* RadialForceComp;
 
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		float ExplosionImpulse;
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		UParticleSystem* ExplosionEffect;
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		UMaterialInterface* ExplodedMaterial;
+
+	bool bExploded;
 
 
 

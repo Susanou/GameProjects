@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="..\..\CoopGame.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{82DE9267-3E6D-4A02-9E01-AC7DD5677DFF}</UniqueIdentifier>
+      <UniqueIdentifier>{B73B9B24-30C2-48B0-AD53-5790E500641E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CoopGame.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{1950DE19-F81E-40CE-B633-B6759496B20B}</UniqueIdentifier>
+      <UniqueIdentifier>{E56B5071-1068-41F4-834D-AC7BB5E2B1BB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CoopGame">
-      <UniqueIdentifier>{394F034C-9630-4AF5-B31C-BF039A0A862C}</UniqueIdentifier>
+      <UniqueIdentifier>{6F84809F-7737-43E1-AAC6-0A4490B97EA7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CoopGame\CoopGame.Build.cs">
       <Filter>Source\CoopGame</Filter>
@@ -45,7 +45,7 @@
       <Filter>Source\CoopGame</Filter>
     </ClInclude>
     <Filter Include="Source\CoopGame\Private">
-      <UniqueIdentifier>{D742421A-8E32-4801-BDAC-2E8EABFDACF3}</UniqueIdentifier>
+      <UniqueIdentifier>{FF360F6F-59EB-4532-8421-BA2C4BA0C3D2}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CoopGame\Private\SCharacter.cpp">
       <Filter>Source\CoopGame\Private</Filter>
@@ -54,7 +54,7 @@
       <Filter>Source\CoopGame\Private</Filter>
     </ClCompile>
     <Filter Include="Source\CoopGame\Private\Challenges">
-      <UniqueIdentifier>{3B28232A-E911-473D-AAB5-12771294AFF0}</UniqueIdentifier>
+      <UniqueIdentifier>{2E2A2222-72A9-4C85-8568-57738F33E052}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CoopGame\Private\Challenges\SExplosiveBarrel.cpp">
       <Filter>Source\CoopGame\Private\Challenges</Filter>
@@ -66,13 +66,13 @@
       <Filter>Source\CoopGame\Private\Challenges</Filter>
     </ClCompile>
     <Filter Include="Source\CoopGame\Private\Components">
-      <UniqueIdentifier>{FB8B2A11-2739-44EB-B6F0-86107C6B6C6D}</UniqueIdentifier>
+      <UniqueIdentifier>{E0369794-D922-497E-AA38-0D83C3D3891D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CoopGame\Private\Components\SHealthComponent.cpp">
       <Filter>Source\CoopGame\Private\Components</Filter>
     </ClCompile>
     <Filter Include="Source\CoopGame\Public">
-      <UniqueIdentifier>{F4793919-C82D-4A05-A108-04D1FCF91AB3}</UniqueIdentifier>
+      <UniqueIdentifier>{C5950B2B-8364-4AD3-8F88-7B1B28148A19}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CoopGame\Public\SCharacter.h">
       <Filter>Source\CoopGame\Public</Filter>
@@ -81,7 +81,7 @@
       <Filter>Source\CoopGame\Public</Filter>
     </ClInclude>
     <Filter Include="Source\CoopGame\Public\Challenges">
-      <UniqueIdentifier>{E3E2A031-CFFB-4609-B2C7-CACEBDE04641}</UniqueIdentifier>
+      <UniqueIdentifier>{E8055CFA-A438-4F1E-9C8B-37D55E856567}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CoopGame\Public\Challenges\SExplosiveBarrel.h">
       <Filter>Source\CoopGame\Public\Challenges</Filter>
@@ -93,7 +93,7 @@
       <Filter>Source\CoopGame\Public\Challenges</Filter>
     </ClInclude>
     <Filter Include="Source\CoopGame\Public\Components">
-      <UniqueIdentifier>{585B9A8B-3E36-422A-8037-B805804CD500}</UniqueIdentifier>
+      <UniqueIdentifier>{8328E444-885E-41DA-A3A5-2A56E3751CE1}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CoopGame\Public\Components\SHealthComponent.h">
       <Filter>Source\CoopGame\Public\Components</Filter>
