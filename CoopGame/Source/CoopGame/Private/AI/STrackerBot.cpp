@@ -7,6 +7,14 @@
 #include "NavigationSystem.h"
 #include "NavigationPath.h"
 #include "GameFramework/Character.h"
+#include "DrawDebugHelpers.h"
+
+static int32 DebugTrackerBotDrawing = 1;
+FAutoConsoleVariableRef CVARDebugTrackerBotDrawing(
+	TEXT("COOP.DebugTrackerBot"),
+	DebugTrackerBotDrawing,
+	TEXT("Draw Debug Lines for TrackerBot"),
+	ECVF_Cheat);
 
 // Sets default values
 ASTrackerBot::ASTrackerBot()
@@ -19,12 +27,19 @@ ASTrackerBot::ASTrackerBot()
 	MeshComp->SetSimulatePhysics(true);
 	RootComponent = MeshComp;
 
+	bUseVelocityChange = false;
+	MovementForce = 1000;
+	RequiredDistToTarget = 100;
+
 }
 
 // Called when the game starts or when spawned
 void ASTrackerBot::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//Find initial move to point
+	NextPathPoint = GetNextPathPoint();
 	
 }
 
@@ -32,6 +47,38 @@ void ASTrackerBot::BeginPlay()
 void ASTrackerBot::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	float DistanceToTarget = (GetActorLocation() - NextPathPoint).Size();
+
+	if (DistanceToTarget <= RequiredDistToTarget)
+	{
+		NextPathPoint = GetNextPathPoint();
+
+		if (DebugTrackerBotDrawing)
+		{
+			DrawDebugString(GetWorld(), GetActorLocation(), "Target Reached!");
+		}
+	}
+	else
+	{
+		// Keep moving towards next target
+		FVector ForceDirection = NextPathPoint - GetActorLocation();
+		ForceDirection.Normalize();
+
+		ForceDirection *= MovementForce;
+
+		MeshComp->AddForce(ForceDirection, NAME_None, bUseVelocityChange);
+
+		if (DebugTrackerBotDrawing)
+		{
+			DrawDebugDirectionalArrow(GetWorld(), GetActorLocation(), GetActorLocation() + ForceDirection, 32, FColor::Yellow, false, 0.0f, 0, 1.0f);
+		}
+	}
+
+	if (DebugTrackerBotDrawing)
+	{
+		DrawDebugSphere(GetWorld(), NextPathPoint, 20, 12, FColor::Yellow, false, 0.0f, 1.0f);
+	}
 
 }
 
@@ -42,7 +89,7 @@ FVector ASTrackerBot::GetNextPathPoint()
 	ACharacter* PlayerPawn = UGameplayStatics::GetPlayerCharacter(this, 0);
 	UNavigationPath* NavPath = UNavigationSystemV1::FindPathToActorSynchronously(this, GetActorLocation(), PlayerPawn);
 	
-	if (NavPath->PathPoints.Num() > 1)
+	if (NavPath && NavPath->PathPoints.Num() > 1)
 	{
 		//Return the next point in the path
 		return NavPath->PathPoints[1];
