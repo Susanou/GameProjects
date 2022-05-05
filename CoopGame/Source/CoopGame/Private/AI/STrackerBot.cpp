@@ -11,6 +11,7 @@
 #include "Components/SHealthComponent.h"
 #include "Components/SphereComponent.h"
 #include "SCharacter.h"
+#include "Sound/SoundCue.h"
 
 static int32 DebugTrackerBotDrawing = 1;
 FAutoConsoleVariableRef CVARDebugTrackerBotDrawing(
@@ -46,6 +47,7 @@ ASTrackerBot::ASTrackerBot()
 
 	ExplosionDamage = 60;
 	ExplosionRadius = 350;
+	SelfDamageInterval = 0.25f;
 
 }
 
@@ -104,6 +106,8 @@ void ASTrackerBot::SelfDestruct()
 	{
 		DrawDebugSphere(GetWorld(), GetActorLocation(), ExplosionRadius, 12, FColor::Red, false, 2.0f, 0, 1.0f);
 	}
+
+	UGameplayStatics::PlaySoundAtLocation(this, ExplodeSound, GetActorLocation());
 
 	// Delete the actor from scene
 	Destroy();
@@ -166,8 +170,10 @@ void ASTrackerBot::NotifyActorBeginOverlap(AActor* OtherActor)
 			//Overlapped with a player
 
 			//Start self destruct sequence
-			GetWorldTimerManager().SetTimer(TimerHandle_SelfDamage, this, &ASTrackerBot::DamageSelf, 0.5f, true, 0.0f);
+			GetWorldTimerManager().SetTimer(TimerHandle_SelfDamage, this, &ASTrackerBot::DamageSelf, SelfDamageInterval, true, 0.0f);
 			bStartedSelfDestruction = true;
+
+			UGameplayStatics::SpawnSoundAttached(SelfDestructSound, RootComponent);
 		}
 	}
 }
