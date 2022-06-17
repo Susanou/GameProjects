@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\camer\\Documents\\Github\\GameProjects\\CoopGame\\Source\\CoopGame\\CoopGame.Build.cs",
-		"C:\\Users\\camer\\Documents\\Github\\GameProjects\\CoopGame\\Source\\CoopGame.Target.cs",
-		"C:\\Users\\camer\\Documents\\Github\\GameProjects\\CoopGame\\Source\\CoopGameEditor.Target.cs"
+		"C:\\Users\\camer\\Documents\\Github\\UnrealProjects\\CoopGame\\Source\\CoopGame\\CoopGame.Build.cs",
+		"C:\\Users\\camer\\Documents\\Github\\UnrealProjects\\CoopGame\\Source\\CoopGame.Target.cs",
+		"C:\\Users\\camer\\Documents\\Github\\UnrealProjects\\CoopGame\\Source\\CoopGameEditor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }
