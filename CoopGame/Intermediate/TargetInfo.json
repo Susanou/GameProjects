@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "CoopGame",
-			"Path": "C:\\Users\\camer\\Documents\\Github\\GameProjects\\CoopGame\\Source\\CoopGame.Target.cs",
+			"Path": "C:\\Users\\camer\\Documents\\Github\\UnrealProjects\\CoopGame\\Source\\CoopGame.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "CoopGameEditor",
-			"Path": "C:\\Users\\camer\\Documents\\Github\\GameProjects\\CoopGame\\Source\\CoopGameEditor.Target.cs",
+			"Path": "C:\\Users\\camer\\Documents\\Github\\UnrealProjects\\CoopGame\\Source\\CoopGameEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

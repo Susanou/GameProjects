@@ -1,10 +1,20 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\camer\Documents\Github\UnrealProjects).
-  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-0961-Win64-DebugGame.dll
-  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-0961-Win64-DebugGame.pdb
-  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-0961-Win64-DebugGame.lib
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-0519-Win64-DebugGame.dll
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-0519-Win64-DebugGame.pdb
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-1922-Win64-DebugGame.dll
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-1922-Win64-DebugGame.pdb
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-7648-Win64-DebugGame.dll
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Binaries\Win64\UE4Editor-CoopGame-7648-Win64-DebugGame.pdb
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-0519-Win64-DebugGame.lib
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-1922-Win64-DebugGame.lib
+  Deleted hot-reload file: C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-7648-Win64-DebugGame.lib
   Building CoopGameEditor...
   Using Visual Studio 2022 14.32.31329 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 1 action with 16 processes...
-    [1/1] CoopGameEditor-Win64-DebugGame.target
-  Total time in Parallel executor: 0,15 seconds
-  Total execution time: 0,65 seconds
+  Building 3 actions with 16 processes...
+    [1/3] UE4Editor-CoopGame-Win64-DebugGame.lib
+       Création de la bibliothèque C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-Win64-DebugGame.lib et de l'objet C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-Win64-DebugGame.exp
+    [2/3] UE4Editor-CoopGame-Win64-DebugGame.dll
+       Création de la bibliothèque C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-Win64-DebugGame.suppressed.lib et de l'objet C:\Users\camer\Documents\Github\UnrealProjects\CoopGame\Intermediate\Build\Win64\UE4Editor\DebugGame\CoopGame\UE4Editor-CoopGame-Win64-DebugGame.suppressed.exp
+    [3/3] CoopGameEditor-Win64-DebugGame.target
+  Total time in Parallel executor: 0,55 seconds
+  Total execution time: 0,92 seconds
